@@ -1,0 +1,19 @@
+.collsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px;
+    gap: 10px;
+    flex-wrap: nowrap;
+
+}
+
+@media only screen and (max-width: 820px) {
+    .collsection {
+        width: 100%;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 40px 0px;
+    }
+
+}

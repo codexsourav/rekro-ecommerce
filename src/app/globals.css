@@ -1,0 +1,107 @@
+:root {
+  --primary: #1a1a1a;
+  --primarylight: #FFEADD;
+  --primarymid: #FF8989;
+  --primarydark: #FF6666;
+  --white: #ffffff;
+  --black: #1a1a1a;
+  --blacklight: #ebebeb;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0px auto;
+  padding: 0px 50px;
+
+}
+
+.page-loading {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-loading .loader {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  border-top: 2px solid black;
+  animation: spiner infinite 1s ease;
+}
+
+/* CustomCarousel.css */
+
+.custom-carousel-container {
+  position: relative;
+  padding: 40px 0px;
+  margin: 0;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  font-size: 20px;
+  font-size: 30px;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 99;
+}
+
+
+.c-content {
+  padding: 0px 50px;
+  margin: 0;
+}
+
+.custom-arrow.left {
+  left: 10px;
+}
+
+.custom-arrow.right {
+  right: 10px;
+}
+
+
+@keyframes spiner {
+  100% {
+    rotate: 360deg;
+  }
+}
+
+
+
+@media only screen and (max-width: 1250px) {
+  .container {
+    max-width: 1200px;
+    padding: 0px 50px;
+    margin: 0px auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    max-width: 1200px;
+    padding: 0px 20px;
+    margin: 0px auto;
+  }
+}

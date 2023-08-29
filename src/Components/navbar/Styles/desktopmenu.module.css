@@ -1,0 +1,128 @@
+.linkslist {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.link::after {
+    content: "";
+    display: block;
+    background-color: var(--black);
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: -8px;
+    margin: 0px auto;
+    transition: 0.3s;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+
+.megamenu {
+    margin-top: 70px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+
+    top: 0;
+    transition: 0.3s ease;
+}
+
+.megamenucat:hover>.link::after {
+    width: 100%;
+}
+
+.megamenucat:hover .megamenu {
+
+    visibility: visible;
+    opacity: 1;
+}
+
+.linkslist {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 400;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    display: block;
+    background-color: var(--black);
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: -8px;
+    margin: 0px auto;
+    transition: 0.3s;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+
+.megamenu {
+    margin-top: 70px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    transition: 0.3s ease;
+}
+
+.megamenucat:hover>.link::after {
+    width: 100%;
+}
+
+.megamenucat:hover .megamenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 850px) {
+    .linkslist {
+        display: none;
+    }
+}
