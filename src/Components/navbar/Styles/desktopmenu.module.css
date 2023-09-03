@@ -47,7 +47,8 @@
     position: absolute;
     opacity: 0;
     visibility: hidden;
-
+    border: 1px solid var(--blacklight);
+    border-top: none;
     top: 0;
     transition: 0.3s ease;
 }
@@ -119,6 +120,13 @@
 .megamenucat:hover .megamenu {
     visibility: visible;
     opacity: 1;
+}
+
+@media only screen and (max-width: 1000px) {
+    .link {
+        font-size: 14px;
+    }
+
 }
 
 @media only screen and (max-width: 850px) {

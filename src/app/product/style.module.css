@@ -1,0 +1,12 @@
+.Productinfocontainer {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto 50%;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .Productinfocontainer {
+        grid-template-columns: 100%;
+    }
+}

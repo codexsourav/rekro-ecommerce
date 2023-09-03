@@ -6,11 +6,20 @@
 
 .previewsec {
     width: 40%;
+    height: 40%;
+    overflow: hidden;
 }
 
 .bannerposter {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    transition: 0.8s;
+}
+
+.previewsec:hover>.bannerposter {
+    scale: 1.1;
 }
 
 .bannercontent {
@@ -36,20 +45,14 @@
 }
 
 .btn {
-    text-decoration: none;
-    color: var(--black);
+
     padding: 15px 30px;
     margin-top: 50px;
     display: inline-block;
-    border: 1px solid var(--blacklight);
-    transition: 0.5s;
+
 }
 
-.btn:hover {
-    background-color: var(--primarydark);
-    border: 1px solid var(--primarydark);
-    color: var(--white);
-}
+
 
 
 @media only screen and (max-width: 790px) {
@@ -63,6 +66,7 @@
 
     .previewsec {
         width: 100%;
+
     }
 
 

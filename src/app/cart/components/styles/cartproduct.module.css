@@ -1,0 +1,85 @@
+.cartproductbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    gap: 50px;
+    padding: 30px;
+}
+
+.productslist {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.productslist tr {
+    border-bottom: 1px solid var(--blacklight);
+
+}
+
+.productslist tr td,
+.productslist tr th {
+    padding: 15px 0px;
+    /* background-color: rgba(255, 0, 0, 0.267); */
+    text-align: left;
+}
+
+.productslist tr th {
+    text-transform: uppercase;
+    color: rgb(126, 126, 126);
+}
+
+.productslist .productdtl .productimage {
+    object-fit: cover;
+    object-position: center;
+}
+
+.productslist .productdtl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    flex-direction: row;
+}
+
+.productslist .productdtl .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.productslist .productdtl .info .cutprice {
+    text-decoration: line-through;
+    color: rgb(126, 126, 126);
+    font-size: 12px;
+}
+
+.removeicon {
+    cursor: pointer;
+    color: rgb(224, 224, 224);
+    padding: 5px;
+}
+
+@media only screen and (max-width: 850px) {
+    .cartproductbox {
+        padding: 20px;
+    }
+
+    .productslist tr td,
+    .productslist tr th {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        /* background-color: red; */
+    }
+
+    .productslist tr th {
+        display: none;
+    }
+}

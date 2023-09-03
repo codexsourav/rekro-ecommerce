@@ -1,7 +1,8 @@
+"use client";
 import ProductBox from '@/Components/Product/ProductBox'
-import React from 'react'
 import Carousel from 'react-multi-carousel'
 import styles from "./styles/slider.module.css";
+
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -19,15 +20,15 @@ const responsive = {
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1
+        items: 2
     }
 };
-function ProductSlider() {
+function ProductSlider({ title }) {
     return (
         <>
             <div className="container">
                 <div className={styles.titlebox}>
-                    <h1 className={styles.title}>New Products</h1>
+                    <h1 className={styles.title}>{title}</h1>
                     <a href='#' className={styles.seeall}>View All</a>
                 </div>
             </div>

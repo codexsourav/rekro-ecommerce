@@ -1,16 +1,47 @@
 .bestsell {
-    margin: 60px 0px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+
+.titlebox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.seeall {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.seeall::after {
+    content: "";
+    display: block;
+    width: 0%;
+
+    height: 2px;
+    background-color: black;
+    position: relative;
+    transition: 0.6s;
+}
+
+.seeall:hover.seeall::after {
+    width: 100%;
 }
 
 .title {
     font-weight: 400;
     text-transform: uppercase;
+
 }
 
 .title::after {
     content: "";
     display: block;
-    width: 200px;
+    width: 120px;
     margin-top: 8px;
     height: 2px;
     background-color: rgba(0, 0, 0, 0.705);
@@ -20,7 +51,7 @@
     display: grid;
     gap: 25px;
     grid-template-columns: auto auto auto auto;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 20px 0px;
 }
 

@@ -9,11 +9,36 @@
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+}
+
+*:hover,
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #fff;
+  background: var(--primarymid);
+}
+
+::selection {
+  color: #fff;
+  background: var(--primarymid);
 }
 
 .container {
@@ -26,6 +51,7 @@
 .page-loading {
   display: flex;
   height: 100vh;
+  background-color: #fff;
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -40,47 +66,99 @@
   animation: spiner infinite 1s ease;
 }
 
-/* CustomCarousel.css */
-
-.custom-carousel-container {
-  position: relative;
-  padding: 40px 0px;
-  margin: 0;
-  background-color: red;
-  justify-content: center;
-  align-items: center;
-}
-
-.custom-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  border-radius: 50%;
-  padding: 8px;
-  cursor: pointer;
+.primarybtn {
+  text-decoration: none;
   color: black;
+  border: 1px solid var(--black);
+  padding: 15px 30px;
+  transform: translateY(0px);
+  transition: 0.3s;
+  display: inline-block;
+  text-align: center;
   background-color: transparent;
-  font-size: 20px;
-  font-size: 30px;
-  transition: background 0.3s, transform 0.3s;
-  z-index: 99;
+  cursor: pointer;
+}
+
+.primarybtn:hover {
+  background-color: var(--black);
+  color: #fff;
+  transform: translateY(-10px);
+}
+
+/* product sidder  */
+
+.react-multiple-carousel__arrow {
+  z-index: 10 !important;
+}
+
+/* price range style  */
+.rc-slider-track {
+  background-color: #000 !important;
+  height: 2px;
+}
+
+.rc-slider-rail {
+  height: 2px;
+}
+
+.rc-slider-handle {
+  margin-top: -6px;
+  background-color: #fff;
+  border: solid 2px #141414;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.rc-slider-handle:hover {
+  border-color: #141414;
+}
+
+.rc-slider-handle:active {
+  border-color: #141414;
+  box-shadow: 0 0 5px #aaaaaa;
+
+}
+
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+  border-color: #141414;
+  box-shadow: 0 0 0 5px #646464;
 }
 
 
-.c-content {
-  padding: 0px 50px;
-  margin: 0;
+/* product slides  */
+
+.carousel .thumbs-wrapper {
+  margin: 15px 0px;
+  overflow: hidden;
 }
 
-.custom-arrow.left {
-  left: 10px;
+.carousel .thumb {
+  padding: 2px;
+  border: 2px solid transparent;
+
 }
 
-.custom-arrow.right {
-  right: 10px;
+.carousel .thumb.selected,
+.carousel .thumb:hover {
+  border: 2px solid var(--blacklight);
 }
 
+
+.carousel ul .thumb img {
+  width: calc(100px - 8px);
+  height: calc(100px - 8px);
+  object-position: center;
+  object-fit: cover;
+}
+
+.carousel.carousel-slider .control-arrow {
+  opacity: 0.2;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  opacity: 0.2;
+  background: rgba(0, 0, 0, 0.5);
+}
 
 @keyframes spiner {
   100% {
@@ -103,5 +181,9 @@
     max-width: 1200px;
     padding: 0px 20px;
     margin: 0px auto;
+  }
+
+  .carousel .thumb {
+    margin-right: 15px;
   }
 }

@@ -10,11 +10,11 @@ function HeroSection() {
                     <div className={styles.content}>
                         <h3 className={styles.subtitle}>new women fashion</h3>
                         <h1 className={styles.title}>Summer essential stock</h1>
-                        <a href='#' className={styles.btn}>Shop Now</a>
+                        <a href='#' className={`primarybtn ${styles.btn}`}>Shop Now</a>
                     </div>
                     <div className={styles.heroimage}>
                         <div className={styles.round}></div>
-                        <Image src="/images/banner-img.webp" width={400} height={460} className={styles.heroimg} />
+                        <Image alt="bannerimg" src="/images/banner-img.webp" width={400} height={460} className={styles.heroimg} />
                     </div>
                 </div>
             </div>

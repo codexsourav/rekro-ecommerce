@@ -1,8 +1,9 @@
-import Navbar from '@/Components/navbar/navbar'
 import { Providers } from './Provider'
-import './globals.css'
 import { Inter } from 'next/font/google'
+import 'rc-slider/assets/index.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import 'react-multi-carousel/lib/styles.css';
+import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,7 +16,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers >
-          <Navbar />
           {children}
         </Providers>
       </body>

@@ -9,15 +9,14 @@
     height: 220px;
     object-fit: cover;
     object-position: center;
-    opacity: 0.8;
-    transition: 0.5s;
+
 }
 
 .content {
     position: absolute;
     bottom: 0;
     margin: 30px;
-
+    opacity: 1;
 }
 
 .title {
@@ -26,13 +25,24 @@
 }
 
 .action {
-    display: block;
     color: white;
+    transition: 0.5s;
+    display: inline-block;
+    position: relative;
 }
 
-.collbox:hover .bgimg {
-    opacity: 1;
+.action::before {
+    content: " ";
+    width: 20px;
+    position: absolute;
+    height: 1px;
+    background-color: #fff;
+    bottom: 0;
+    right: -25px;
+    top: 10px;
 }
+
+
 
 @media only screen and (max-width: 1250px) {
     .bgimg {
@@ -51,6 +61,8 @@
         height: auto;
     }
 
+
+
     .collbox {
         width: 100%;
     }
@@ -60,4 +72,11 @@
         margin: 30px 25px;
     }
 
+    .collboxflip .bgimg {
+        transform: scaleX(-1);
+    }
+
+    .collboxflip .content {
+        right: 20px;
+    }
 }

@@ -9,7 +9,7 @@
     overflow: auto;
     transform: translateX(-100%);
     transition: 0.5s;
-    z-index: 99;
+    z-index: 999;
 }
 
 .sideblank {
@@ -19,7 +19,7 @@
     width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.534);
-    z-index: 99;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
@@ -96,4 +96,10 @@
 
 .megamenuopen.megamenu {
     display: block;
+}
+
+@media only screen and (max-width: 310px) {
+    .navmenu {
+        width: 100vw;
+    }
 }

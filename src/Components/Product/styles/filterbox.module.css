@@ -1,0 +1,197 @@
+.filtersection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.filter {
+    width: 85px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 35px;
+    color: var(--black);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sortbox {
+    width: 140px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 35px;
+    padding: 0px 10px;
+    color: var(--black);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+.sort {
+    width: 100px;
+    background-color: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.sort::-ms-expand {
+    display: none;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.151);
+    top: 0;
+    right: 0;
+    z-index: 999;
+    visibility: hidden;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.filteroptionbox {
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 50px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 120px;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: translateX(-100%);
+}
+
+.filteroptionbox.active {
+    transition: 0.5s;
+    visibility: visible;
+    transform: translateX(0%);
+}
+
+.overlay.active {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.header {
+    width: 350px;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background-color: var(--black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 20px;
+    z-index: 99;
+}
+
+.sectitle {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #3f3f3f;
+}
+
+.linklist {
+    display: block;
+    width: 100%;
+    padding: 8px 0px;
+    color: #292929;
+    text-decoration: none;
+}
+
+.filtercate {
+    margin-top: 40px;
+}
+
+.priceslider {
+    margin-top: 20px;
+    user-select: none;
+    z-index: 9;
+}
+
+.slidervalue {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    overflow: hidden;
+}
+
+.slidervalue p {
+    background-color: #f0f0f0;
+    width: 60px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    max-lines: 1;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.chacksfilter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 1px solid #333;
+    background-color: white;
+    cursor: pointer;
+    vertical-align: middle;
+
+}
+
+.chacksfilter input[type="checkbox"]:checked+.checkmark {
+    background-color: #000;
+    border-color: #000;
+}
+
+
+.chackboxinp {
+    display: none;
+}
+
+@media only screen and (max-width: 360px) {
+    .filteroptionbox {
+        width: 100vw;
+    }
+
+    .header {
+        width: 100vw;
+    }
+}

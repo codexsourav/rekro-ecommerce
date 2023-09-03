@@ -1,6 +1,8 @@
 "use client";
+import Image from "next/image";
 import styles from "./Styles/cartmenu.module.css";
 import { HiOutlineXMark } from "react-icons/hi2";
+import ProductCounter from "../Product/ProductCounter";
 
 function CartMenu({ toggle, show }) {
     return (
@@ -15,13 +17,82 @@ function CartMenu({ toggle, show }) {
 
                 <div className={styles.products}>
                     <div className={styles.product}>
+                        <div className={styles.productinfo}>
+                            <Image src="/product/1.jpg" width={80} height={80} />
+                            <div className={styles.pinfo}>
+                                <p>Casual t-shirts</p>
+                                <p>$399.00</p>
+                                <p>QUT : 1 </p>
+                            </div>
+                        </div>
+                        <div className={styles.removecart} >
+                            <HiOutlineXMark />
+                        </div>
                     </div>
-
                     <div className={styles.product}>
+                        <div className={styles.productinfo}>
+                            <Image src="/product/1.jpg" width={80} height={80} />
+                            <div className={styles.pinfo}>
+                                <p>Casual t-shirts</p>
+                                <p>$399.00</p>
+                                <p>QUT : 1 </p>
+                            </div>
+                        </div>
+                        <div className={styles.removecart} >
+                            <HiOutlineXMark />
+                        </div>
                     </div>
                     <div className={styles.product}>
+                        <div className={styles.productinfo}>
+                            <Image src="/product/1.jpg" width={80} height={80} />
+                            <div className={styles.pinfo}>
+                                <p>Casual t-shirts</p>
+                                <p>$399.00</p>
+                                <p>QUT : 1 </p>
+                            </div>
+                        </div>
+                        <div className={styles.removecart} >
+                            <HiOutlineXMark />
+                        </div>
                     </div>
                     <div className={styles.product}>
+                        <div className={styles.productinfo}>
+                            <Image src="/product/1.jpg" width={80} height={80} />
+                            <div className={styles.pinfo}>
+                                <p>Casual t-shirts</p>
+                                <p>$399.00</p>
+                                <p>QUT : 1 </p>
+                            </div>
+                        </div>
+                        <div className={styles.removecart} >
+                            <HiOutlineXMark />
+                        </div>
+                    </div>
+                    <div className={styles.product}>
+                        <div className={styles.productinfo}>
+                            <Image src="/product/1.jpg" width={80} height={80} />
+                            <div className={styles.pinfo}>
+                                <p>Casual t-shirts</p>
+                                <p>$399.00</p>
+                                <p>QUT : 1 </p>
+                            </div>
+                        </div>
+                        <div className={styles.removecart} >
+                            <HiOutlineXMark />
+                        </div>
+                    </div>
+                    <div className={styles.product}>
+                        <div className={styles.productinfo}>
+                            <Image src="/product/1.jpg" width={80} height={80} />
+                            <div className={styles.pinfo}>
+                                <p>Casual t-shirts</p>
+                                <p>$399.00</p>
+                                <p>QUT : 1 </p>
+                            </div>
+                        </div>
+                        <div className={styles.removecart} >
+                            <HiOutlineXMark />
+                        </div>
                     </div>
                 </div>
 

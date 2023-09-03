@@ -7,7 +7,7 @@ function Collections() {
 
             <div className={styles.collsection}>
                 <Collbox img='1.png' />
-                <Collbox img='2.png' />
+                <Collbox img='2.png' flip />
                 <Collbox img='3.png' />
             </div>
 

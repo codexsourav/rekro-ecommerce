@@ -6,12 +6,15 @@ import { HiOutlineShoppingCart, HiOutlineMagnifyingGlass, HiOutlineUser, HiBars3
 import MobileMenu from './MobileMenu';
 import DektopNavbar from './DektopNavbar';
 import CartMenu from './CartMenu';
+import SearchBox from './SearchBox';
 function Navbar() {
 
     const [showNav, setshowNav] = useState(false);
     const [showcartbox, setshowcartbox] = useState(false);
+    const [showsearchbox, setshowsearchbox] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+
     const scrollThreshold = 70 + 35;
 
     const handleScroll = () => {
@@ -47,12 +50,12 @@ function Navbar() {
                         <HiBars3CenterLeft size={35} className={navcss.drowerbtn} onClick={() => navtogle(true)} key="barsmenu" />
                     </div>
                     <div className={navcss.navimg}>
-                        <Image src='/images/logo-b.png' width={120} height={35} className={navcss.setnavimg} />
+                        <Image alt='logo' src='/images/logo-b.png' width={120} height={35} className={navcss.setnavimg} />
                     </div>
 
                     <DektopNavbar />
                     <div className={navcss.options}>
-                        <HiOutlineMagnifyingGlass size={22} className={navcss.option} />
+                        <HiOutlineMagnifyingGlass size={22} className={navcss.option} onClick={() => setshowsearchbox(true)} />
                         <HiOutlineUser size={22} className={navcss.option} />
                         <div className={navcss.carticon} onClick={() => carttogle(true)}>
                             <HiOutlineShoppingCart size={22} className={navcss.option} />
@@ -67,6 +70,9 @@ function Navbar() {
             <div className={` ${navcss.cartitembox} ${showcartbox ? navcss.opencartitembox : null}`} >
                 <div className={navcss.cartoverlay}></div>
                 <CartMenu toggle={carttogle} show={showcartbox} />
+            </div>
+            <div className={`${navcss.showsearchbox} ${showsearchbox ? navcss.activesearch : null}`}>
+                <SearchBox onclose={setshowsearchbox} />
             </div>
         </>
     )
