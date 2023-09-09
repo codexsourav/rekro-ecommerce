@@ -1,0 +1,63 @@
+.authform {
+    width: 500px;
+    margin: 50px auto;
+    border: 1px solid var(--blacklight);
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: 50px;
+    /* border-bottom: 1px solid var(--blacklight); */
+    line-height: 50px;
+    text-align: center;
+    color: var(--black);
+    cursor: pointer;
+    user-select: none;
+}
+
+.tab {
+    transition: 0.5s;
+}
+
+.tab.active {
+    color: #fff;
+    background-color: var(--black);
+}
+
+.authinputform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+
+
+
+.fpass {
+    font-size: 14px;
+    text-align: right;
+    color: var(--black);
+    margin: 5px 0px;
+
+}
+
+.authbtn {
+    width: 100%;
+    margin-top: 20px;
+    height: 55px;
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .authform {
+        width: 100%;
+
+    }
+
+    .authinputform {
+        padding: 50px 30px;
+    }
+}

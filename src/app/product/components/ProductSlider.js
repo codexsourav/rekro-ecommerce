@@ -1,17 +1,12 @@
 "use client"
-
 import { Carousel } from 'react-responsive-carousel';
 import styles from './styles/productslide.module.css';
-const images = [
-    "/insta/2.jpg",
-    "/insta/1.jpg",
 
-]
-function ProductSlider() {
-
+function ProductSlider({ data }) {
+    const images = data?.images;
     return (
         <div className={styles.productslide} >
-            <Carousel infiniteLoop showArrows show thumbWidth={100} showStatus={false} showIndicators={false} swipeable>
+            <Carousel infiniteLoop showArrows show thumbWidth={100} showStatus={false} showIndicators={false} swipeable={true}>
                 {
                     images.map((e, i) => {
                         return <div key={"keyimage-" + i} className={styles.productimgbox}  >
@@ -19,9 +14,7 @@ function ProductSlider() {
                         </div>
                     })
                 }
-
             </Carousel>
-
         </div>
     )
 }

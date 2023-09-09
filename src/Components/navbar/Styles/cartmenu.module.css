@@ -74,6 +74,15 @@
     align-items: flex-start;
 }
 
+.producttitle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-lines: 1;
+    white-space: nowrap;
+    width: 200px;
+
+}
+
 .removecart {
     display: block;
     height: 30px;

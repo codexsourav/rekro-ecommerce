@@ -1,0 +1,15 @@
+.flotingbtn {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    margin: 40px;
+    z-index: 999;
+    box-shadow: 0px 10px 30px rgb(109, 109, 109);
+}

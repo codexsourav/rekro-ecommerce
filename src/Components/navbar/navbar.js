@@ -7,16 +7,19 @@ import MobileMenu from './MobileMenu';
 import DektopNavbar from './DektopNavbar';
 import CartMenu from './CartMenu';
 import SearchBox from './SearchBox';
-function Navbar() {
+import { useDispatch, useSelector } from 'react-redux';
+import { setcarttoogle, setdrawer, setsearchbox } from '@/Services/menutoggle/toogle';
+import { staticlinks } from '@/constents/staticlinks';
 
-    const [showNav, setshowNav] = useState(false);
-    const [showcartbox, setshowcartbox] = useState(false);
-    const [showsearchbox, setshowsearchbox] = useState(false);
+function Navbar() {
+    const dispatch = useDispatch();
+    const toogle = useSelector((state) => state.toogle);
+    const cart = useSelector((state) => state.cart);
+
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
 
     const scrollThreshold = 70 + 35;
-
     const handleScroll = () => {
         const currentScrollPos = window.pageYOffset;
         const shouldHideNavbar = currentScrollPos > prevScrollPos && currentScrollPos > scrollThreshold;
@@ -24,12 +27,7 @@ function Navbar() {
         setVisible(!shouldHideNavbar);
     };
 
-    const navtogle = (val) => {
-        setshowNav(val);
-    }
-    const carttogle = (val) => {
-        setshowcartbox(val);
-    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -45,34 +43,33 @@ function Navbar() {
             </div>
             <div className={`${navcss.navbar} ${visible ? navcss.visible : navcss.hidden}`}>
                 <div className={`container ${navcss.nav}`}>
-
                     <div className={navcss.drowerbtndiv} >
-                        <HiBars3CenterLeft size={35} className={navcss.drowerbtn} onClick={() => navtogle(true)} key="barsmenu" />
+                        <HiBars3CenterLeft size={35} className={navcss.drowerbtn} onClick={() => dispatch(setdrawer(true))} key="barsmenu" />
                     </div>
-                    <div className={navcss.navimg}>
+                    <a href={staticlinks.home} className={navcss.navimg}>
                         <Image alt='logo' src='/images/logo-b.png' width={120} height={35} className={navcss.setnavimg} />
-                    </div>
+                    </a>
 
                     <DektopNavbar />
                     <div className={navcss.options}>
-                        <HiOutlineMagnifyingGlass size={22} className={navcss.option} onClick={() => setshowsearchbox(true)} />
-                        <HiOutlineUser size={22} className={navcss.option} />
-                        <div className={navcss.carticon} onClick={() => carttogle(true)}>
+                        <HiOutlineMagnifyingGlass size={22} className={navcss.option} onClick={() => dispatch(setsearchbox(true))} />
+                        <a href={staticlinks.account}>  <HiOutlineUser size={22} className={navcss.option} /></a>
+                        <div className={navcss.carticon} onClick={() => dispatch(setcarttoogle(true))}>
                             <HiOutlineShoppingCart size={22} className={navcss.option} />
-                            <span className={navcss.cartcount}>1</span>
+                            <span className={navcss.cartcount}>{cart.products.length}</span>
                         </div>
                     </div>
                 </div>
             </div>
             {/* this is menu mobile  */}
-            <MobileMenu show={showNav} setnav={navtogle} />
+            <MobileMenu />
             {/* this is cart */}
-            <div className={` ${navcss.cartitembox} ${showcartbox ? navcss.opencartitembox : null}`} >
+            <div className={` ${navcss.cartitembox} ${toogle.carttoggle ? navcss.opencartitembox : null}`} >
                 <div className={navcss.cartoverlay}></div>
-                <CartMenu toggle={carttogle} show={showcartbox} />
+                <CartMenu />
             </div>
-            <div className={`${navcss.showsearchbox} ${showsearchbox ? navcss.activesearch : null}`}>
-                <SearchBox onclose={setshowsearchbox} />
+            <div className={`${navcss.showsearchbox} ${toogle.searchbox ? navcss.activesearch : null}`}>
+                <SearchBox />
             </div>
         </>
     )

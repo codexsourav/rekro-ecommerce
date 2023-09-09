@@ -1,27 +1,31 @@
-"use client";
+"use client"
 import mobilemenucss from "./Styles/mobilemenu.module.css"
 import MegaMenu from "./MegaMenu";
 import { HiOutlineXMark, HiOutlineChevronDown, HiOutlineChevronUp } from "react-icons/hi2";
 import { useState } from "react";
-import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { setdrawer } from "@/Services/menutoggle/toogle";
+import { staticlinks } from "@/constents/staticlinks";
 
-function MobileMenu({ show, setnav }) {
+function MobileMenu() {
+    const dispatch = useDispatch();
+    const toogle = useSelector((state) => state.toogle);
     const [showShopmenu, setshowShopmenu] = useState(false)
     const [showpages, setshowpages] = useState(false)
 
     return (
         <>
-            <div className={`${show ? mobilemenucss.openmenu : null} ${mobilemenucss.sideblank} `} onClick={() => setnav(false)}></div>
+            <div className={`${toogle.drawer ? mobilemenucss.openmenu : null} ${mobilemenucss.sideblank} `} onClick={() => dispatch(setdrawer(false))}></div>
 
-            <div className={`${mobilemenucss.navmenu} ${show ? mobilemenucss.openmenu : null}`} >
-                <div className={mobilemenucss.closeicon}><HiOutlineXMark size={25} onClick={() => setnav(false)} /></div>
+            <div className={`${mobilemenucss.navmenu} ${toogle.drawer ? mobilemenucss.openmenu : null}`} >
+                <div className={mobilemenucss.closeicon}><HiOutlineXMark size={25} onClick={() => dispatch(setdrawer(false))} /></div>
                 <ul className={mobilemenucss.linkslist}>
-                    <li className={mobilemenucss.links}><Link className={mobilemenucss.link} href="/home">Home</Link></li>
-                    <li className={mobilemenucss.links}>  <Link className={mobilemenucss.link} href="/search?s=test">New Arrivals</Link></li>
+                    <li className={mobilemenucss.links}><a className={mobilemenucss.link} href={staticlinks.home}>Home</a></li>
+                    <li className={mobilemenucss.links}>  <a className={mobilemenucss.link} href={staticlinks.newProducts}>New Arrivals</a></li>
                     <li className={`${mobilemenucss.links} ${mobilemenucss.megamenucat}`} >
 
                         <div className={mobilemenucss.navmenutab}>
-                            <a className={mobilemenucss.link} href="#">Shop</a>
+                            <a className={mobilemenucss.link} href={staticlinks.shop}>Shop</a>
                             {!showShopmenu ? <HiOutlineChevronDown onClick={() => {
                                 setshowShopmenu(true)
                                 setshowpages(false)
@@ -36,8 +40,7 @@ function MobileMenu({ show, setnav }) {
                             <MegaMenu key="mobilemenu" />
                         </div>
                     </li>
-                    <li className={mobilemenucss.links}>  <a className={mobilemenucss.link} href="#">Offers</a></li>
-                    <li className={mobilemenucss.links}>  <a className={mobilemenucss.link} href="#">Track Order</a></li>
+                    <li className={mobilemenucss.links}>  <a className={mobilemenucss.link} href={staticlinks.trackorder}>Track Order</a></li>
                     <li className={`${mobilemenucss.links} ${mobilemenucss.megamenucat}`} >
 
                         <div className={mobilemenucss.navmenutab} onClick={() => {
@@ -49,10 +52,10 @@ function MobileMenu({ show, setnav }) {
                                 : <HiOutlineChevronUp className={mobilemenucss.dropdownicon} />}
                         </div>
                         <div className={`${mobilemenucss.megamenu} ${showpages ? mobilemenucss.megamenuopen : null}`} >
-                            <MegaMenu key="mobilemenu" />
+                            <MegaMenu key="mobilemenu" showpages />
                         </div>
                     </li>
-                    <li className={mobilemenucss.links}> <a className={mobilemenucss.link} href="#">Cart</a></li>
+                    <li className={mobilemenucss.links}> <a className={mobilemenucss.link} href={staticlinks.cart}>Cart</a></li>
 
                 </ul>
 

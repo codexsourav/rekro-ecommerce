@@ -1,9 +1,17 @@
 .productinfobox {
     display: flex;
     justify-content: flex-start;
-    gap: 20px;
     flex-direction: column;
 
+}
+
+.stickontop {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-direction: column;
+    position: sticky;
+    top: 70px;
 }
 
 .title {

@@ -50,20 +50,23 @@
 .productslist {
     display: grid;
     gap: 25px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    /* Equal width for 4 columns */
     margin-top: 0px;
     padding: 20px 0px;
 }
 
 @media only screen and (max-width: 1000px) {
     .productslist {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3, 1fr);
+        /* Equal width for 4 columns */
     }
 }
 
 @media only screen and (max-width: 850px) {
     .productslist {
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, 1fr);
+        /* Equal width for 4 columns */
 
     }
 }

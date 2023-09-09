@@ -1,17 +1,15 @@
-"use client";
 import Collbox from './widgets/collbox'
 import styles from "./styles/coll.module.css";
-function Collections() {
+function Collections({ pagedata }) {
+    const { firstcollection, secendcollection, thurdcollection } = pagedata;
+
     return (
         <div className='container' >
-
             <div className={styles.collsection}>
-                <Collbox img='1.png' />
-                <Collbox img='2.png' flip />
-                <Collbox img='3.png' />
+                <Collbox info={firstcollection} />
+                <Collbox info={secendcollection} flip />
+                <Collbox info={thurdcollection} />
             </div>
-
-
         </div>
     )
 }

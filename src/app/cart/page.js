@@ -1,3 +1,4 @@
+"use client"
 import PageWrapper from "../PageWrapper"
 import CartProduct from "./components/CartProduct"
 import PriceCart from "./components/PriceCart";
@@ -11,8 +12,12 @@ function Cart() {
                         <div className={styles.products}>
                             <CartProduct />
                         </div>
-                        <div className={styles.pricebox}>
-                            <PriceCart />
+                        <div>
+                            <div className={styles.pricebox}>
+
+                                <PriceCart />
+
+                            </div>
                         </div>
                     </div>
                 </div>

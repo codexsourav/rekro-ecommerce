@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.error {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    background-color: rgb(226, 247, 255);
+
+    animation: bgrootate 5s ease infinite;
+}
+
+@keyframes bgrootate {
+    0% {
+        background-color: rgb(226, 247, 255);
+    }
+
+    50% {
+        background-color: rgb(183, 227, 245);
+    }
+
+    100% {
+        background-color: rgb(226, 247, 255);
+    }
+}
+
+
+.title {
+    font-size: 100px;
+}
+
+.error p {
+    font-size: 20px;
+}
+
+.error a {
+    text-decoration: none;
+    width: 140px;
+    height: 45px;
+    border: 1px solid #49494996;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+
+}

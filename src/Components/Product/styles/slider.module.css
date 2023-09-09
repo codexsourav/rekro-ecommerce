@@ -6,7 +6,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-top: 80px;
     margin-bottom: 40px;
 }
@@ -20,7 +19,6 @@
     content: "";
     display: block;
     width: 0%;
-
     height: 2px;
     background-color: black;
     position: relative;
@@ -50,6 +48,7 @@
     max-width: 1250px;
     margin: 0px auto;
     padding: 0px 30px;
+    min-height: 180px;
     z-index: -1;
 }
 

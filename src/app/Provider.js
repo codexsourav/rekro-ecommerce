@@ -4,7 +4,7 @@ import store from "../Services/Store";
 import { SessionProvider } from "next-auth/react";
 export function Providers({ children }) {
     return <>
-        <SessionProvider>
+        <SessionProvider >
             <Provider store={store}>{children}</Provider>
         </SessionProvider>
     </>;

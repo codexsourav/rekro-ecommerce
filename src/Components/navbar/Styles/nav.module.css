@@ -62,6 +62,12 @@
 
 .option {
     cursor: pointer;
+    color: var(--black);
+}
+
+.option a {
+    color: var(--black);
+
 }
 
 .carticon {

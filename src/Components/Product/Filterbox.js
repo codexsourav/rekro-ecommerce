@@ -1,5 +1,5 @@
+"use client"
 import { IoIosClose, IoIosOptions, IoIosSwap } from "react-icons/io";
-
 import styles from './styles/filterbox.module.css'
 import Slider from "rc-slider";
 import { useState } from "react";
@@ -7,21 +7,17 @@ import { useState } from "react";
 function Filterbox() {
     const [priceslider, setpriceslider] = useState([0, 200])
     const [showfilter, setshowfilter] = useState(false)
-
-
     return (
         <>
             <div className={styles.filtersection}>
                 <div className={styles.filter} onClick={() => setshowfilter(true)}><IoIosOptions /> <p>Filter</p></div>
                 <div className={styles.sortbox}>
                     <select className={styles.sort}>
-
                         <option>Default Sort</option>
                         <option>Sort By Populer</option>
                         <option>Sort By Rating</option>
                         <option>Price: Low To High</option>
                         <option>Price: High To Low</option>
-
                     </select>
                     <IoIosSwap size={18} />
                 </div>
@@ -36,7 +32,6 @@ function Filterbox() {
                     <IoIosClose size={30} onClick={() => setshowfilter(false)} style={{ cursor: "pointer" }} />
                 </div>
                 <div className={styles.filtercate}>
-
                     <h3 className={styles.sectitle}>Product collections</h3>
                     {
                         ["Accessories",
@@ -48,7 +43,6 @@ function Filterbox() {
                             })
                     }
                 </div>
-
                 <div className={styles.filtercate}>
                     <h3 className={styles.sectitle}>Filter by price</h3>
                     <Slider range
@@ -67,24 +61,9 @@ function Filterbox() {
                     </div>
                 </div>
 
-                <div className={styles.filtercate}>
-                    <h3 className={styles.sectitle}>Colors</h3>
-                    {
-                        ["Red",
-                            "Black",
-                            "White",
-                            "Green",
-                            "Baby Pink"].map((e, i) => {
-                                return <div key={i} className={styles.chacksfilter}>
-                                    <input type="checkbox" className={styles.chackboxinp} checked={i == 1} onChange={(e) => console.log(e)} />
-                                    <span className={styles.checkmark}></span>
-                                    <p className={styles.linklist}>{e}</p>
-                                </div>
-                            })
-                    }
-                </div>
 
-                <div className={styles.filtercate}>
+
+                {/* <div className={styles.filtercate}>
                     <h3 className={styles.sectitle}>Cloth Size</h3>
                     {
                         ["L",
@@ -114,7 +93,8 @@ function Filterbox() {
                             </div>
                         })
                     }
-                </div>
+                </div> */}
+                <a className="primarybtnactive" style={{ paddingTop: 10, paddingBottom: 10, marginTop: 20, marginBottom: 50 }}>Apply Filter</a>
             </div>
         </>
     )

@@ -2,6 +2,8 @@
 import ProductBox from '@/Components/Product/ProductBox'
 import Carousel from 'react-multi-carousel'
 import styles from "./styles/slider.module.css";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const responsive = {
     superLargeDesktop: {
@@ -23,36 +25,31 @@ const responsive = {
         items: 2
     }
 };
-function ProductSlider({ title }) {
+function ProductSlider({ title, data }) {
+
+
+
+
     return (
         <>
             <div className="container">
                 <div className={styles.titlebox}>
                     <h1 className={styles.title}>{title}</h1>
-                    <a href='#' className={styles.seeall}>View All</a>
+                    <a href='/shop' className={styles.seeall}>View All</a>
                 </div>
             </div>
 
             <div className={styles.slidecontainer}>
 
+
                 <Carousel responsive={responsive} itemClass={styles.items} >
-                    <ProductBox />
-
-                    <ProductBox />
-
-                    <ProductBox />
-
-                    <ProductBox />
-
-                    <ProductBox />
-
-                    <ProductBox />
-
-                    <ProductBox />
-
-                    <ProductBox />
-
+                    {
+                        data.map((e, i) => <ProductBox key={"slider-" + i} data={e} />)
+                    }
                 </Carousel>
+
+
+
             </div>
         </>
     )

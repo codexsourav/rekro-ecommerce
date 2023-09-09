@@ -8,5 +8,6 @@
 @media only screen and (max-width: 900px) {
     .Productinfocontainer {
         grid-template-columns: 100%;
+        margin-top: 20px;
     }
 }

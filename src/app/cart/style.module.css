@@ -8,7 +8,6 @@
     display: grid;
     grid-template-columns: auto 300px;
     gap: 50px;
-
 }
 
 .products {
@@ -19,7 +18,6 @@
 
 .pricebox {
     width: 300px;
-
     position: sticky;
     top: 120px;
     background-color: #fff;

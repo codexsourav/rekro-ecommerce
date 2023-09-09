@@ -1,9 +1,7 @@
 .heroSection {
-
-    background-color: #f8ebe6;
+    background-color: #fff3e0;
     height: calc(100vh - 70px - 35px);
     width: 100%;
-
     max-height: 700px;
     display: flex;
     justify-content: center;
@@ -104,7 +102,7 @@
 @media only screen and (max-width: 900px) {
 
     .heroSection {
-        background-color: #fff3e0;
+
         height: auto;
         width: 100%;
         overflow: hidden;

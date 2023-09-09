@@ -1,9 +1,11 @@
 import { Providers } from './Provider'
 import { Inter } from 'next/font/google'
+import 'react-toastify/dist/ReactToastify.css';
 import 'rc-slider/assets/index.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import 'react-multi-carousel/lib/styles.css';
 import './globals.css'
+import { ToastContainer } from 'react-toastify';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -16,6 +18,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers >
+          <ToastContainer position="top-right"
+            autoClose={2000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light" />
           {children}
         </Providers>
       </body>

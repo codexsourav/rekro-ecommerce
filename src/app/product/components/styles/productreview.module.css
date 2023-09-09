@@ -1,0 +1,58 @@
+.reviewbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+    padding: 20px 0px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--blacklight);
+}
+
+.reviewname {
+    font-size: 20px;
+}
+
+.reviewdate {
+    font-size: 12px;
+    color: rgb(66, 66, 66);
+}
+
+.reviewform {
+    margin: 40px 0px;
+    margin-bottom: 80px;
+}
+
+.formtitle {
+    font-weight: 400;
+    padding: 10px 0px;
+    font-size: 28px;
+}
+
+.formdesc {
+    padding: 10px 0px 30px 0px;
+    font-weight: 300;
+    color: var(--black);
+}
+
+.reviewareainput {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+    height: 180px;
+    padding: 15px;
+}
+
+.towrow {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+    .towrow {
+        grid-template-columns: auto;
+        gap: 0px;
+    }
+}
